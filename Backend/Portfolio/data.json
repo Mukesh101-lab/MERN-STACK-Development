@@ -1,0 +1,45 @@
+{
+  "name": "Mukesh Patel",
+  "title": "Full Stack Developer",
+  "about": "I am a passionate developer who loves building web applications and solving problems.",
+
+  "skills": [
+    "Java",
+    "JavaScript",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "HTML",
+    "CSS"
+  ],
+
+  "projects": [
+    {
+      "title": "Portfolio Website",
+      "description": "Personal portfolio to showcase my projects and skills.",
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "github": "https://github.com/yourusername/portfolio",
+      "live": "https://yourportfolio.com"
+    },
+    {
+      "title": "REST API",
+      "description": "Backend API built using Node.js and Express.",
+      "tech": ["Node.js", "Express.js"],
+      "github": "https://github.com/yourusername/api"
+    }
+  ],
+
+  "education": [
+    {
+      "degree": "B.Tech in Computer Science",
+      "college": "XYZ College",
+      "year": "2022-2026"
+    }
+  ],
+
+  "contact": {
+    "email": "your@email.com",
+    "linkedin": "https://linkedin.com/in/yourprofile",
+    "github": "https://github.com/yourusername"
+  }
+}

@@ -1,0 +1,35 @@
+<%- include("includes/head.ejs") %>
+<body style="margin: 10px;">
+    <h1>Portfolio Page</h1>
+    <div style="background-color: white; padding: 20px; border-radius: 10px;">
+        <h3><%= portData.name %></h3>
+        <p><%= portData.title %></p>
+        <p><%= portData.about %></p>
+    </div>
+    <div style="background-color: white; padding: 20px; border-radius: 10px;">
+        <h2>Skills</h2>
+        <ul>
+            <% portData.skills.forEach(skill => { %>
+                <li><%= skill %></li>
+            <% }) %>
+        </ul>
+    </div>
+    <div style="background-color: white; padding: 20px; border-radius: 10px;">
+        <h2>Contact</h2>
+        <p>Email: <%= portData.contact.email %></p>
+        <p>LinkedIn: <a href="<%= portData.contact.linkedin %>" target="_blank">Profile</a></p>
+        <p>GitHub: <a href="<%= portData.contact.github %>" target="_blank">Profile</a></p>
+    </div>
+    <div>
+            <h2>Education</h2>
+            <% portData.education.forEach(edu => { %>
+                <div style="background-color: #f0f0f0; padding: 10px; margin-bottom: 10px; border-radius: 5px;">
+                    <h3><%= edu.institution %></h3>
+                    <p><%= edu.degree %> - <%= edu.year %></p>
+                </div>
+            <% }) %>        
+    </div>
+    
+    <%- include("includes/footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,17 @@
+form{
+    padding: 20px;
+    width: 250px;
+    height: 200px;
+    background-color: lightblue;
+    border: 2px solid blue;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+input{
+    margin: 10px;
+}
+
+button{
+    margin: 20px 0 0 60px;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quora</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <H1>Quora</H1>
+    <ul>
+        <% posts.forEach(post => { %>
+            <div>
+                <h2><%= post.name %></h2>
+                <p><%= post.content %></p>
+                <a href="http://localhost:8080/posts/show/<%= post.id %>">Show</a>
+                <form action="/posts/delete/<%= post.id %>?_method=DELETE" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        <% }); %>
+    </ul>
+    <a href="http://localhost:8080/posts/new">Create new chats</a>
+</body>
+</html>
