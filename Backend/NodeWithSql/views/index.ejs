@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Data</title>
+</head>
+<body>
+    <h1>All Data</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+        <% data.forEach(user => { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.username %></td>
+                <td><%= user.email %></td>
+                <td><%= user.password %></td>
+                <td><a href="/users/<%= user.id %>">show</a></td>
+                <td><a href="/users/<%= user.id %>/edit">edit</a></td>
+                <td>
+                    <form action="/users/<%= user.id %>/delete?_method=DELETE" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+    </table>    
+    <a href="/users/new">Add New User</a>
+</body>
+</html>
