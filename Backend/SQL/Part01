@@ -1,0 +1,52 @@
+create database college;
+use college;
+
+create table student(
+rollno int ,
+name varchar(30) ,
+age int 
+);
+
+insert into student
+values
+(101,"Mukesh",24),
+(102,"Kishan",20);
+
+select*from student;
+
+show databases;
+show tables;
+
+create database if not exists instagram;
+use instagram;
+
+create table user(
+id int, 
+age int,
+name varchar(30) not null,
+email varchar(50) unique,
+followers int default 0,
+following int,
+constraint check (age>=13),
+primary key(id)
+);
+
+create table posts(
+id int primary key ,
+content varchar(50),
+user_id int,
+foreign key (user_id) references user(id)
+);
+
+drop table posts;
+
+insert into user
+(id,age,name,email,followers,following)
+values
+(1,14,"adam","adam@gmail.com",123,145),
+(2,15,"bob","bob123@gmail.com",200,200),
+(3,16,"casey","casey@gmail.com",300,306),
+(4,17,"donald","donald@gmail.com",200,105);
+
+select id,name,email from user;
+select*from user;
