@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wanderlust</title>
-</head>
+<% layout('/layouts/boilerplate') -%>
 <body>
-    <h1>Wanderlust</h1>
     <ul>
         <% for(let listing of listings) {%>
             <li><a href="/listings/<%= listing._id %>"><%= listing.title %></a></li>
         <% } %>
     </ul>
-    <a href="/listings/new">create new listing</a>
+    <!-- <a href="/listings/new">create new listing</a> -->
 </body>
-</html>
