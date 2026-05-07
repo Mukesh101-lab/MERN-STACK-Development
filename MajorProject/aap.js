@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const Listing = require('./modals/listing')
 const path = require('path');
+const methodOverride = require('method-override');
 
 const port = 8080;
 
@@ -11,6 +12,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
 main()
     .then(() => console.log('Connected to MongoDB'))
@@ -30,14 +32,12 @@ app.get('/listings', async(req, res) => {
 
 //new listing form
 app.get('/listings/new', (req, res) => {
-    res.send('Page is working');
-    // res.render('new.ejs');
+    res.render('new.ejs');
 });
 
 app.post('/listings', async(req, res) => {
-    console.log(req.body);
-    const listing = new Listing(req.body);
-    await listing.save();
+    let newlisting = new Listing(req.body.listing);
+    await newlisting.save();
     res.redirect('/listings');
 });
 
@@ -46,6 +46,28 @@ app.post('/listings', async(req, res) => {
 app.get('/listings/:id', async(req, res) => {
     let listing = await Listing.findById(req.params.id);
     res.render('show.ejs', { listing });
+});
+
+
+//edit route
+app.get('/listings/:id/edit', async(req, res) => {
+    const { id } = req.params;
+    const listing = await Listing.findById(id);
+    res.render('edit.ejs', { listing });
+
+});
+
+app.put('/listings/:id', async(req, res) => {
+    const { id } = req.params;
+    await Listing.findByIdAndUpdate(id, req.body.listing);
+    res.redirect(`/listings/${id}`);
+});
+
+//delete route
+app.delete('/listings/:id',async(req,res) =>{
+    const {id} = req.params;
+    await Listing.findByIdAndDelete(id);
+    res.redirect('/listings');
 });
 
 
