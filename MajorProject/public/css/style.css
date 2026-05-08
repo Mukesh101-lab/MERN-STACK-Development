@@ -1,6 +1,6 @@
-/* body{
-    background-color: pink;
-} */
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+}
 
 .navbar{
     height: 5rem;
@@ -39,12 +39,77 @@
     margin-right: 1rem ;
 }
 
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex: 1;
+}
 .f-info{
     text-align: center;
     display: flex;
     height: 8rem;
     background-color: #ebebeb;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: space-evenly;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: auto;
+}
+
+/* cards */
+
+.card{
+    border: none !important;
+    margin-top: 2rem;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0 !important;
+
+}
+
+.card-text p{
+    font-weight: 400;
+}
+
+.listing-link{
+    text-decoration: none !important;
+}
+
+/* Card effects */
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* new page */
+
+.add-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Eddit Page */
+
+.edit-btn{
+    background-color: #fe424d !important;
+    border: none !important;
 }

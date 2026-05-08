@@ -3,49 +3,69 @@
       <h1>Edit Listing</h1>
 
     <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
         <input 
             type="text" 
-            name="listing[image]" 
-            value="<%= listing.image %>"
-            placeholder="Image Link"
-        >
-        <br><br>
-        <input 
-            type="text" 
+            class="form-control"
             name="listing[title]" 
             value="<%= listing.title %>"
             placeholder="Title"
         >
-        <br><br>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
         <input 
             type="text" 
+            class="form-control"
             name="listing[description]" 
             value="<%= listing.description %>"
             placeholder="Description"
         >
-        <br><br>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Image Link</label>
+        <input 
+            type="text" 
+            class="form-control"
+            name="listing[image][url]" 
+            value="<%= listing.image.url %>"
+            placeholder="Image Link"
+        >
+    </div>
+    <div class="row">
+    <div class="mb-3 col-4">
+        <label class="form-label">Price</label>
         <input 
             type="number" 
+            class="form-control"
             name="listing[price]" 
             value="<%= listing.price %>"
             placeholder="Price"
         >
-        <br><br>
+    </div>
+    <div class="mb-3 col-8">
+        <label class="form-label">Country</label>
         <input 
             type="text" 
-            name="listing[location]" 
-            value="<%= listing.location %>"
-            placeholder="Location"
-        >
-        <br><br>
-        <input 
-            type="text" 
+            class="form-control"
             name="listing[country]" 
             value="<%= listing.country %>"
             placeholder="Country"
         >
-        <br><br>
-        <button>Update</button>
+    </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Location</label>
+        <input 
+            type="text" 
+            class="form-control"
+            name="listing[location]" 
+            value="<%= listing.location %>"
+            placeholder="Location"
+        >
+    </div>
+    <button class="btn btn-dark edit-btn mt-3">Edit</button>
     </form>
 
 </body>
