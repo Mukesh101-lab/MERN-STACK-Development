@@ -2,7 +2,7 @@
 <body>
       <h1>Edit Listing</h1>
 
-    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
     <div class="mb-3">
         <label class="form-label">Title</label>
         <input 
@@ -11,7 +11,9 @@
             name="listing[title]" 
             value="<%= listing.title %>"
             placeholder="Title"
+            required
         >
+        <div class="valid-feedback">Title looks good!</div>
     </div>
     <div class="mb-3">
         <label class="form-label">Description</label>
@@ -21,7 +23,9 @@
             name="listing[description]" 
             value="<%= listing.description %>"
             placeholder="Description"
+            required
         >
+        <div class="invalid-feedback">Please Valid Description</div>
     </div>
     <div class="mb-3">
         <label class="form-label">Image Link</label>
@@ -42,7 +46,9 @@
             name="listing[price]" 
             value="<%= listing.price %>"
             placeholder="Price"
+            required
         >
+        <div class="invalid-feedback">Please Valid Price</div>
     </div>
     <div class="mb-3 col-8">
         <label class="form-label">Country</label>
@@ -52,7 +58,9 @@
             name="listing[country]" 
             value="<%= listing.country %>"
             placeholder="Country"
+            required
         >
+        <div class="invalid-feedback">Please Valid Country Name</div>
     </div>
     </div>
     <div class="mb-3">
@@ -63,7 +71,9 @@
             name="listing[location]" 
             value="<%= listing.location %>"
             placeholder="Location"
+            required
         >
+        <div class="invalid-feedback">Please Valid Location</div>
     </div>
     <button class="btn btn-dark edit-btn mt-3">Edit</button>
     </form>

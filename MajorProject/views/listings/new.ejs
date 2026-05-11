@@ -3,7 +3,8 @@
     
     <div class="row">
     <div class="col-8 offset-2">
-    <form method="POST" action="/listings">
+    <h3>Create a New Listing</h3>
+    <form method="POST" action="/listings" novalidate class="needs-validation">
     <div class="mb-3">
         <label class="form-label">Title</label>
         <input 
@@ -11,7 +12,9 @@
             class="form-control"
             placeholder="Title" 
             name="listing[title]"
+            required
         >
+        <div class="valid-feedback">Title looks good!</div>
     </div>
     <div class="mb-3">
         <label class="form-label">Description</label>
@@ -20,7 +23,9 @@
             class="form-control"
             placeholder="Description" 
             name="listing[description]"
+            required
         >
+        <div class="invalid-feedback">Please Valid Description</div>
     </div>
     <div class="mb-3">
         <label class="form-label">Image Link</label>
@@ -35,11 +40,13 @@
     <div class="mb-3 col-4">
         <label class="form-label">Price</label>
         <input 
-            type="number" 
+            
             class="form-control"
             placeholder="Price" 
             name="listing[price]"
+            required
         >
+        <div class="invalid-feedback">Please Valid Price</div>
     </div>
     <div class="mb-3 col-8">
         <label class="form-label">Country</label>
@@ -48,7 +55,9 @@
             class="form-control"
             placeholder="Country" 
             name="listing[country]"
+            required
         >
+        <div class="invalid-feedback">Please Valid Country Name</div>
     </div>
     </div>
     <div class="mb-3">
@@ -58,7 +67,9 @@
             class="form-control"
             placeholder="Location" 
             name="listing[location]"
+            required
         >
+        <div class="invalid-feedback">Please Valid Location</div>
     </div>
     <button class="btn btn-dark add-btn">Add</button>
     </form>
