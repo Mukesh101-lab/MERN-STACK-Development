@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Chat = require('./models/chat');
 const path = require('path');
 const methodOverride = require('method-override');
+const ExpressError = require("./ExpressError");
 
 const port = 8080;
 
@@ -19,7 +20,7 @@ main()
     .catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/whatsapp');
+  await mongoose.connect('mongodb://127.0.0.1:27017/fakewhatsapp');
 
 }
 
@@ -50,6 +51,13 @@ app.post('/chats', async (req, res) => {
         console.log(err);
     }
 });
+
+//new - show route
+app.get("/chats/:id",async(req,res)=>{
+    let {id} = req.params;
+    let chat = await Chat.findById(id);
+    res.render("edit.ejs",{chat});
+})
 
 //edit chat form
 app.get('/chats/:id/edit', async (req, res) => {
@@ -96,9 +104,16 @@ app.delete('/chats/:id', async (req, res) => {
 //     .then(() => console.log('Chat saved successfully'))
 //     .catch(err => console.log(err));
 
+//Error handling middleware
+app.use((err,req,res,next) =>{
+    let {status = 500 , message = "some Error Occurred"} = err;
+    res.status(status).send(message);
+});
+
 app.get('/', (req, res) => {
     res.send('Page is working');
 });
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
