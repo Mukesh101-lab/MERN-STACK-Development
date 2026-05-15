@@ -7,6 +7,8 @@ const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
 const wrapAsync = require("./utils/wrapAsync");
 const ExpressError = require("./utils/ExpressError");
+const { error } = require('console');
+const {listingSchema} = require("./schema");
 
 const port = 8080;
 
@@ -28,6 +30,16 @@ async function main() {
 
 }
 
+const validateListing = (req,res,next) => {
+    let {error} = listingSchema.validate(req.body);
+    if(error){
+        let errMsg = error.details.map((el) => el.message).join(",");
+        throw new ExpressError(400, errMsg);
+    }else{
+        next();
+    }
+}
+
 app.get('/',(req,res) =>{
     res.send("hi,i am Mukesh")
 });
@@ -44,7 +56,7 @@ app.get('/listings/new', (req, res) => {
     res.render('listings/new.ejs');
 });
 
-app.post('/listings', wrapAsync(async (req, res, next) => {
+app.post('/listings',validateListing, wrapAsync(async (req, res, next) => {
     let newlisting = new Listing(req.body.listing);
     await newlisting.save();
     res.redirect('/listings');
@@ -66,7 +78,10 @@ app.get('/listings/:id/edit',wrapAsync(async(req, res) => {
 
 }));
 
-app.put('/listings/:id',wrapAsync(async(req, res) => {
+app.put('/listings/:id',validateListing, wrapAsync(async(req, res) => {
+    if(!req.body.listing){
+        throw new ExpressError(400,"Send Valid data for listing");
+    }
     const { id } = req.params;
     await Listing.findByIdAndUpdate(id, req.body.listing);
     res.redirect(`/listings/${id}`);
@@ -86,7 +101,8 @@ app.all("*",(req,res,next) =>{
 //middleware
 app.use((err,req,res,next) =>{
     let {statusCode=500,message="something went wrong"} = err;
-    res.status(statusCode).send(message);
+    res.status(statusCode).render("error.ejs",{message});
+    // res.status(statusCode).send(message);
 });
 
 
