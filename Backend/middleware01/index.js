@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const ExpressError = require("./ExpressError");
 
 const port = 8080;
 
@@ -23,7 +24,7 @@ const checkToken = (req,res,next) =>{
     if(q == "giveaccess"){
         next();
     }else{
-        res.send("Access Denide");
+        throw new ExpressError(401,"Access Denide");
     }
 };
 
@@ -32,7 +33,17 @@ app.use("/api",checkToken ,(req,res) =>{
 });
 
 app.get("/",(req,res) =>{
-    res.send("hi,i am root page");
+    abcd = abcd;
+});
+
+app.get("/admin",(req,res) =>{
+    throw new ExpressError(403,"Access to admin is forbidden");
+});
+
+app.use((err,req,res,next) =>{
+    console.log("--- error ----");
+    let {status = 500 , message = "some error"} = err;
+    res.status(status).send(message);
 });
 
 app.get("/random",(req,res) =>{
