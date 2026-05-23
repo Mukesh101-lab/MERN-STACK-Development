@@ -18,6 +18,9 @@
                 <form action="/chats/<%= chat._id %>?_method=DELETE" method="POST">
                     <button type="submit">Delete Chat</button>
                 </form>
+                <form method="get" action="/chats/<%= chat._id %>">
+                    <button>show</button>
+                </form>
                 <hr>
                 <p>Created At: <%= chat.created_at.toString().split(' ')[4] %></p>
                 <p><%= chat.created_at.toString().split(' ').splice(0, 4).join(' ') %></p>
