@@ -214,3 +214,96 @@
 //     req = prompt("please enter your request : ");
 // }
 
+// let student = {
+//     name: "mukesh",
+//     age: 20,
+//     city: "surat",
+//     isMarried: false,
+// };
+
+
+// const item = {
+//     name: "laptop",
+//     price: 50000,
+//     color: "black",
+//     isAvailable: true,
+// };
+
+
+// const posts = {
+//     userName: "mukesh",
+//     content: "javascript is good",
+//     likes: 100,
+//     repost: 20,
+//     tags: ["javascript", "programming", "web development"],
+//     isPublic: true,
+// };
+
+// const ClassInfo = {
+//     aman:{
+//         age: 22,
+//         city: "surat",
+//     },
+//     mukesh:{
+//         age: 20,
+//         city: "surat",
+//     },
+//     ramesh:{
+//         age: 25,
+//         city: "surat",
+//     },
+//     suresh:{
+//         age: 30,
+//         city: "surat",
+//     },
+// };
+
+
+// const classInfo = [
+//     {
+//         name: "Aman",
+//         age: 22,
+//         city: "surat"
+//     },
+//     {
+//         name: "Mukesh",
+//         age: 20,
+//         city: "surat"
+//     },
+//     {
+//         name: "Ramesh",
+//         age: 25,
+//         city: "surat"
+//     },
+//     {
+//         name: "Suresh",
+//         age: 30,
+//         city: "surat"
+//     }
+// ];
+
+
+// let num = Math.floor(Math.random() * 10) + 1;
+// console.log(num);
+
+// const max = prompt("Enter the maximum number : ");
+// const randomNum = Math.floor(Math.random() * max) + 1;
+
+// let guess = prompt("Guess the number : ");
+
+// while(true){
+//     if(guess == "quit"){
+//         console.log("you quit");
+//         break;
+//     }
+//     else if(guess == randomNum){
+//         console.log("wow nice");
+//         break;
+//     }
+//     else if(guess < randomNum ){
+//         guess = prompt("too low, please try again");
+//     }
+//     else{
+//         guess = prompt("too high, please try again");
+//     }
+// };
