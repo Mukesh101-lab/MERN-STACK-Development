@@ -307,3 +307,142 @@
 //         guess = prompt("too high, please try again");
 //     }
 // };
+
+// function hello(){
+//     console.log("hello world");
+// };
+
+// function perint1to5(){
+//     for(let i=1;i<=5;i++){
+//         console.log(i);
+//     }
+// };
+
+// function rolldice(){
+//     const randomNum = Math.floor(Math.random() * 6) + 1;
+//     if(randomNum === 6){
+//         console.log("wow nice you win");
+//     }
+//     console.log(`you rolled : ${randomNum}`);
+// };
+
+// function greet(name){
+//     console.log(`Hello ${name}, welcome to JavaScript!`);
+// };
+
+// function printavge(num1,num2,num3){
+//     const average = (num1 + num2 + num3) / 3;
+//     console.log(`Average is : ${average}`);
+// };
+
+// function isEven(num){
+//     if(num % 2 === 0){
+//         console.log(`${num} is even`);
+//     }
+//     else{
+//         console.log(`${num} is odd`);
+//     }
+// };
+
+// function findMax(num1,num2,num3){
+//     let max = num1;
+//     if(num2 > max){
+//         max = num2;
+//     }
+//     if(num3 > max){
+//         max = num3;
+//     }
+//     console.log(`Maximum number is : ${max}`);
+// };
+
+// function printMultiplicationTable(num){
+//     console.log(`Multiplication Table of ${num} :`);
+//     for(let i=1;i<=10;i++){
+//         console.log(`${num} x ${i} = ${num * i}`);
+//     }
+// };
+
+// function print1toNsum(n){
+//     console.log(`Numbers from 1 to ${n} :`);
+//     let sum = 0;
+//     for(let i=1;i<=n;i++){
+//         console.log(i);
+//         sum += i;
+//     }
+//     return sum;
+// };
+
+// const sum = function(num1,num2){
+//     return num1 + num2;
+// };
+
+// function multipletimesprint(greet,n){
+//     for(let i=0;i<n;i++){
+//         greet();
+//     }
+// };
+
+// let greet = function(){
+//     console.log("namaste");
+// }
+
+// multipletimesprint(greet,5);
+
+// function oddorEvenFactory(req){
+//     if(req == "odd"){
+//         return function(n){
+//             console.log(n%2 == 0);
+//         }
+//     }
+//     if(req == "even"){
+//         return function(n){
+//             console.log(n%2 == 0);
+//         }
+//     }
+// }
+
+// oddorEvenFactory("odd")(10);
+
+// const calculator = {
+//     add(num1,num2){
+//         return num1 + num2;
+//     },
+//     subtract(num1,num2){
+//         return num1 - num2;
+//     },
+//     multiply(num1,num2){
+//         return num1 * num2;
+//     },
+    
+// };
+
+// const student = {
+//     name: "mukesh",
+//     age: 20,
+//     math: 85,
+//     science: 90,
+//     english: 80,
+//     totalMarks(){
+//         return this.math + this.science + this.english;
+//     },
+//     averageMarks(){
+//         return this.totalMarks() / 3;
+//     }
+// };
+
+// try{
+//     console.log(a);
+// }
+// catch(err){
+//     console.log("An error occurred : " + err.message);
+// }
+
+// const sum = (a,b) => a + b;
+
+// console.log("Hellow Mukesh");
+
+// setInterval(() => {
+//     console.log("This is a delayed message");
+// }, 2000);
+
+// console.log("This message will appear before the delayed message");
