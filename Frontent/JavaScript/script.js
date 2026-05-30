@@ -446,3 +446,34 @@
 // }, 2000);
 
 // console.log("This message will appear before the delayed message");
+
+
+// let arr = [1,2,3,4,5];
+
+// let print = function(num){
+//     console.log(num);
+// };
+
+// arr.forEach(print);
+
+// arr.forEach(function(num){
+//     console.log(num);
+// });
+
+// arr.forEach((num) => {
+//     console.log(num);
+// });
+
+// arr.forEach(num => console.log(num));
+
+// let arr = [2,4,6,8,10,11];
+
+// let ans = arr.filter((el) => el % 2 === 0);
+
+// console.log(ans);
+
+// let asn = arr.reduce((res,el) =>{
+//    result = res + el;
+//    return result;
+// });
+// console.log(asn);
