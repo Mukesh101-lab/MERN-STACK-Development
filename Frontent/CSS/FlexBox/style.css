@@ -1,13 +1,57 @@
 /* .container{
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 200px;
     border: 2px solid black;
     display: flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items: flex-start;
+    /* flex-wrap: wrap; */
+
+
+/* } */
+
+/* .box{
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    flex-basis: 150px;
+    flex-shrink: 1;
+}  */
+
+/* .box1{
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
-.box{
-    width: 100px;
-    height: 100px;
-    border: 2px solid black;
-    margin: 10px;
+.box2{
+    flex-grow: 1;
+    flex-shrink: 2;
+} 
+
+.box3{
+    flex-grow: 1;
+    flex-shrink: 1;
 } */
+/* .box{
+    flex-shrink: 0;
+    flex-basis: 200px;
+} */
+
+/* .box2{
+    align-self: flex-end;
+
+}*/
+
+/* .container{
+    border: 2px solid black;
+    width: 300px;
+    display: flex;
+    flex-wrap: nowrap; /* ya is line ko hata do */
+/* } */
+
+/* .box{
+    border: 2px solid black;
+    flex-basis: 150px;
+    flex-shrink: 1;
+}  */
