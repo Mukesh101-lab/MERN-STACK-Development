@@ -26,8 +26,10 @@
 
 // let para = document.querySelector("p");
 
-let list = document.querySelectorAll(".box a");
+// let list = document.querySelectorAll(".box a");
 
-for(let i=0;i<list.length;i++){
-    list[i].style.color = 'red';
-}
+// for(let i=0;i<list.length;i++){
+//     list[i].style.color = 'red';
+// }
+
+// let list = document.querySelectorAll("div a");
