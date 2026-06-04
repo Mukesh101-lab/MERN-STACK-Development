@@ -55,3 +55,20 @@
     flex-basis: 150px;
     flex-shrink: 1;
 }  */
+
+/* .container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(231, 200, 159);
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.box{
+   
+    width: 25%;
+    height: 45%;
+    border: 2px solid black;
+} */
+
