@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Show All data user</h1>
-     <table border="black">
+    <table border="black">
         <header>
             <tr>
                 <th>id</th>
@@ -16,16 +18,37 @@
                 <th>password</th>
             </tr>
         </header>
+
         <body>
             <% for(value of data){ %>
                 <tr>
-                    <td><%= value.id %></td>
-                    <td><%= value.username %></td>
-                    <td><%= value.email %></td>
-                    <td><%= value.password %></td>
+                    <td>
+                        <%= value.id %>
+                    </td>
+                    <td>
+                        <%= value.username %>
+                    </td>
+                    <td>
+                        <%= value.email %>
+                    </td>
+                    <td>
+                        <%= value.password %>
+                    </td>
+                    <td>
+                        <form action="/user/<%= value.id %>/edit" method="get">
+                            <button>edit</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/user/<%= value.id %>?_method=DELETE" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
                 </tr>
-            <% } %>
+                <% } %>
         </body>
     </table>
+    <a href="/user/new">Create data</a>
 </body>
+
 </html>
