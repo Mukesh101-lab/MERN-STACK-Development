@@ -1,0 +1,18 @@
+div{
+    background-color: rgb(165, 206, 242);
+    width: 400px;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+div .msg{
+    padding: 10px;
+    border-radius: 15px;
+    background-color: blue;
+    color: white;
+}
+
+button{
+    margin: 10px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Chat</title>
+</head>
+<body>
+    <h1>Edit Chat</h1>
+    <form action="/chats/<%= chat._id %>?_method=PUT" method="POST">
+        <label>From:</label>
+        <input
+            type="text"
+            name="from"
+            value="<%= chat.from %>"
+            required
+        >
+        <br><br>
+        <label>To:</label>
+        <input
+            type="text"
+            name="to"
+            value="<%= chat.to %>"
+            required
+        >
+        <br><br>
+        <label>Message:</label>
+        <textarea
+            name="msg"
+            rows="5"
+            cols="30"
+            required
+        ><%= chat.msg %></textarea>
+        <br><br>
+        <button type="submit">Update Chat</button>
+    </form>
+</body>
+</html>

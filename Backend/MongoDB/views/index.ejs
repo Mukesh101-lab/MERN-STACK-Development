@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whatsapp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>All Chats</h1>
+    <% for(let chat of allChats) { %>
+        <div>
+            <p><b>From:</b>
+                <%= chat.from %>
+            </p>
+            <p><b>To:</b>
+                <%= chat.to %>
+            </p>
+            <p class="msg"><b>Message:</b>
+                <%= chat.msg %>
+            </p>
+            <%= chat.created_at.toLocaleString("en-IN", { hour: "numeric" , minute: "numeric" , weekday: "long" ,
+                year: "numeric" , month: "long" , day: "numeric" }) %>
+
+                <a href="/chats/<%= chat._id %>/edit">Edit</a>
+                <form action="/chats/<%= chat._id %>?_method=DELETE" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+                <hr>
+        </div>
+        <% } %>
+            <a href="/chats/new">create new chat</a>
+</body>
+
+</html>
